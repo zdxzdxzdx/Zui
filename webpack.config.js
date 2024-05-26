@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: {
@@ -6,16 +7,21 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
-        library: 'FUI',
+        library: 'ZUI',
         libraryTarget: 'umd',
     },
     module: {
-        rules:[
+        rules: [
             {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
+    ]
 
 }
