@@ -1,5 +1,6 @@
+import Button from './button';
 
-import Button from './button'
+const a = 1
+console.log('hi')
 
-const a =1
-export {Button,a}
+export {Button, a};
